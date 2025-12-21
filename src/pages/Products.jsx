@@ -151,16 +151,38 @@ export default function Products() {
     <div className="bg-[#fafafa] min-h-screen font-sans">
 
       {/* HERO */}
-      <header className="py-32 bg-[#0b0e19] text-white">
-        <div className="container mx-auto px-6">
-          <h1 className="text-6xl md:text-8xl font-black mb-6">
-            ENGINEERED <span className="text-red-600">SYSTEMS</span>
-          </h1>
-          <p className="text-gray-400 max-w-2xl text-xl">
-            Precision-grade access solutions for industrial environments.
-          </p>
-        </div>
-      </header>
+      <header className="bg-[#0b0e19] text-white">
+  <div className="container mx-auto px-6
+                  pt-24 pb-20
+                  sm:pt-28 sm:pb-24
+                  md:py-32">
+
+    <h1 className="
+      font-black mb-6
+      leading-tight
+      text-[2.5rem]
+      sm:text-[3.25rem]
+      md:text-6xl
+      lg:text-7xl
+      xl:text-8xl
+    ">
+      ENGINEERED{" "}
+      <span className="text-red-600 block sm:inline">
+        SYSTEMS
+      </span>
+    </h1>
+
+    <p className="
+      text-gray-400 max-w-2xl
+      text-base
+      sm:text-lg
+      md:text-xl
+    ">
+      Precision-grade access solutions for industrial environments.
+    </p>
+  </div>
+</header>
+
 
       {/* FILTER BAR */}
       <div className="sticky top-0 z-40 bg-white/95 backdrop-blur border-b">
