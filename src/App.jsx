@@ -7,6 +7,9 @@ import Products from "./pages/Products";
 import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
 import ProductDetails from "./pages/ProductDetails";
+import PrivacyPolicy from "./components/PrivacyPolicy";
+import TermsAndConditions from "./components/TermsAndConditions";
+
 
 export default function App() {
   return (
@@ -18,6 +21,8 @@ export default function App() {
         <Route path="/products" element={<Products />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms" element={<TermsAndConditions/>} />
         <Route path="/products/:id" element={<ProductDetails />} />
 
 

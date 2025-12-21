@@ -1,84 +1,144 @@
+import React from "react";
+import GulfLogisticsNetwork from "../components/GulfLogisticsNetwork";
+
 export default function About() {
   return (
-    <div className="bg-white">
-      {/* 1. Hero / Header Section */}
-      <section className="bg-[#0c1635] text-white py-20 px-6 relative overflow-hidden">
-        <div className="absolute top-0 right-0 opacity-10 transform translate-x-1/3 -translate-y-1/2">
-           {/* Abstract Gear/Construction Pattern */}
-           <svg width="400" height="400" viewBox="0 0 200 200" fill="currentColor"><path d="M100 0L200 100L100 200L0 100Z" /></svg>
+    <div className="bg-white text-slate-700 min-h-screen font-sans selection:bg-red-500/20 selection:text-red-700">
+      
+      {/* 1. HERO */}
+      <section className="relative w-full h-[80vh] flex items-center justify-center overflow-hidden bg-[#0c1635]">
+        <div className="absolute inset-0 z-0">
+          <img
+            src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=2000&q=80"
+            alt="Industrial Construction Scaffolding"
+            className="w-full h-full object-cover opacity-30 scale-105"
+          />
+          <div className="absolute inset-0 bg-[#0c1635]/40"></div>
         </div>
-        <div className="container mx-auto text-center relative z-10">
-          <span className="text-red-500 font-bold tracking-[0.2em] uppercase text-sm">Who We Are</span>
-          <h1 className="text-4xl md:text-6xl font-extrabold mt-4 mb-6">
-            Building Trust on <br/> Every Level.
+
+        <div className="container mx-auto px-6 relative z-10 text-center">
+          <div className="inline-flex items-center gap-2 border border-white/20 px-4 py-1.5 rounded-full mb-8">
+            <span className="w-1.5 h-1.5 rounded-full bg-red-500"></span>
+            <span className="text-xs font-mono tracking-widest uppercase text-white">
+              Est. 2024 • ScafXS Engineering
+            </span>
+          </div>
+
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+            Engineering Safe <br />
+            Scaffolding Systems.
           </h1>
-          <div className="w-20 h-1.5 bg-red-600 mx-auto rounded-sm"></div>
+
+          <p className="max-w-2xl mx-auto text-lg text-white leading-relaxed opacity-90">
+            ScafXS is a premium industrial scaffolding company delivering
+            certified aluminum access systems for construction, infrastructure,
+            oil & gas, and heavy engineering projects worldwide.
+          </p>
         </div>
       </section>
 
-      {/* 2. Main Content - Split Layout */}
-      <section className="container mx-auto py-20 px-6">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
-          
-          {/* Image Side with "Industrial Frame" Effect */}
-          <div className="relative group">
-            <div className="absolute -inset-4 bg-red-600/10 rounded-sm transform translate-x-2 translate-y-2 group-hover:translate-x-4 group-hover:translate-y-4 transition-transform duration-300"></div>
-            <div className="absolute -inset-4 border-2 border-[#0c1635]/20 rounded-sm transform -translate-x-2 -translate-y-2"></div>
-            <img
-              src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1000&q=80" 
-              className="relative rounded-sm shadow-2xl z-10 w-full h-[500px] object-cover grayscale hover:grayscale-0 transition-all duration-500"
-              alt="Industrial Site"
-            />
-          </div>
-
-          {/* Text Content */}
-          <div>
-            <h3 className="text-3xl font-bold text-[#0c1635] mb-6 border-l-4 border-red-600 pl-4">
-              Engineering Safety & <br/> Performance
-            </h3>
-            <p className="text-gray-600 text-lg leading-relaxed mb-6">
-              ScafX isn't just a supplier; we are your strategic partner in construction access. 
-              Born from a need for <span className="font-semibold text-[#0c1635]">stricter safety standards</span> in the industry, 
-              we combine modern engineering with heavy-duty materials to create access solutions 
-              that protect workers and accelerate project timelines.
-            </p>
-            
-            <ul className="space-y-4 mt-8">
-              {[
-                "ISO Certified Manufacturing Processes",
-                "High-Tensile Aluminium Alloys",
-                "Custom Engineering for Complex Sites",
-                "24/7 Technical Support & On-site Consulting"
-              ].map((item, index) => (
-                <li key={index} className="flex items-center gap-3 text-gray-700 font-medium">
-                  <span className="w-6 h-6 bg-red-100 text-red-600 rounded-full flex items-center justify-center text-xs">✓</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* 3. Stats / Vision Strip */}
-      <section className="bg-gray-100 py-16 px-6">
+      {/* 2. MISSION */}
+      <section className="py-24 px-6 relative bg-gray-200">
         <div className="container mx-auto">
-          <div className="grid md:grid-cols-3 gap-8">
-             <div className="bg-white p-8 border-t-4 border-red-600 shadow-lg">
-                <h4 className="text-xl font-bold text-[#0c1635] mb-3">Our Mission</h4>
-                <p className="text-gray-600 text-sm">To redefine industrial access through innovation, ensuring every worker returns home safely every day.</p>
-             </div>
-             <div className="bg-white p-8 border-t-4 border-[#0c1635] shadow-lg">
-                <h4 className="text-xl font-bold text-[#0c1635] mb-3">Our Vision</h4>
-                <p className="text-gray-600 text-sm">To become the global benchmark for scaffolding engineering and safety compliance across all sectors.</p>
-             </div>
-             <div className="bg-white p-8 border-t-4 border-red-600 shadow-lg">
-                <h4 className="text-xl font-bold text-[#0c1635] mb-3">Our Promise</h4>
-                <p className="text-gray-600 text-sm">Uncompromising quality. If it doesn't meet our rigorous safety tests, it doesn't leave our factory.</p>
-             </div>
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
+            <div>
+              <h2 className="text-red-600 font-mono text-sm tracking-widest mb-4">
+                01 / OUR MISSION
+              </h2>
+
+              <h3 className="text-4xl font-semibold text-[#0c1635] mb-8">
+                Precision-engineered access solutions for modern construction.
+              </h3>
+
+              <div className="space-y-8 text-gray-600 leading-relaxed">
+                <p>
+                  At ScafXS, we design and manufacture advanced scaffolding and
+                  access systems focused on safety, durability, and engineering
+                  accuracy.
+                </p>
+                <p>
+                  Every system is digitally modeled, load-tested, and
+                  manufactured using aerospace-grade aluminum.
+                </p>
+              </div>
+
+              <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                {[
+                  { label: "Material", value: "7075-T6 Aluminum" },
+                  { label: "Compliance", value: "ISO 9001:2015" },
+                  { label: "Safety Factor", value: "4:1 Ratio" },
+                  { label: "Support", value: "24/7 On-Site Assistance" },
+                ].map((stat, i) => (
+                  <div
+                    key={i}
+                    className="border-l-2 border-gray-200 pl-4 hover:border-red-500 transition-colors"
+                  >
+                    <p className="text-xs text-gray-400 font-mono uppercase mb-1">
+                      {stat.label}
+                    </p>
+                    <p className="text-lg text-[#0c1635] font-medium">
+                      {stat.value}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <img
+                src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1000&q=80"
+                alt="Industrial Scaffolding"
+                className="w-full h-[600px] object-cover rounded-sm shadow-lg"
+              />
+            </div>
           </div>
         </div>
       </section>
+
+      {/* 3. CORE VALUES */}
+      <section className="py-24 bg-gray-100">
+        <div className="container mx-auto px-6">
+          <div className="mb-16 border-b border-gray-200 pb-8">
+            <h2 className="text-red-600 font-mono text-sm tracking-widest mb-2">
+              02 / CORE VALUES
+            </h2>
+            <h3 className="text-3xl font-bold text-[#0c1635]">
+              Engineered for Excellence
+            </h3>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                title: "Safety",
+                desc: "Every system is tested beyond standards.",
+              },
+              {
+                title: "Innovation",
+                desc: "Lightweight systems engineered using 3D tools.",
+              },
+              {
+                title: "Reliability",
+                desc: "Dependable delivery and regional support.",
+              },
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="p-8 bg-white border border-gray-200 rounded-sm hover:border-red-500/40 shadow-sm hover:shadow-lg transition"
+              >
+                <h4 className="text-xl font-semibold text-[#0c1635] mb-3">
+                  {item.title}
+                </h4>
+                <p className="text-gray-600 text-sm">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 4. GULF LOGISTICS NETWORK (NEW) */}
+      <GulfLogisticsNetwork />
+
     </div>
   );
 }

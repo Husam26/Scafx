@@ -1,111 +1,209 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { ShieldCheck, Ruler, Layers, ArrowRight } from "lucide-react";
 import Hero from "../components/Hero";
+import { useNavigate } from "react-router-dom";
+
+// Animation Variants for reusability
+const fadeInUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.2 },
+  },
+};
 
 export default function Home() {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate("/contact");
+    window.scrollTo({ top: 0, behavior: "smooth" }); // Scroll to top after navigation
+  };
   return (
-    <div className="bg-gray-50">
+    <div className="bg-white font-sans overflow-hidden">
       <Hero />
-      
-      {/* Stats / Trust Strip */}
-      <div className="bg-[#0c1635] py-10 border-b border-gray-800">
-        <div className="container mx-auto px-6 flex flex-wrap justify-around text-center gap-8">
-            <div>
-                <h3 className="text-4xl font-bold text-white">15+</h3>
-                <p className="text-gray-400 text-sm uppercase tracking-widest">Years Experience</p>
-            </div>
-            <div>
-                <h3 className="text-4xl font-bold text-white">500+</h3>
-                <p className="text-gray-400 text-sm uppercase tracking-widest">Projects Completed</p>
-            </div>
-            <div>
-                <h3 className="text-4xl font-bold text-white">100%</h3>
-                <p className="text-gray-400 text-sm uppercase tracking-widest">Safety Certified</p>
-            </div>
-        </div>
-      </div>
 
-      {/* Why Choose ScafX Section */}
-      <section className="container mx-auto py-24 px-6">
-        <div className="text-center mb-16">
-          <span className="text-red-600 font-bold uppercase tracking-widest text-sm">Why Choose Us</span>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-[#0c1635] mt-2 mb-6">
-            Engineering Excellence
-          </h2>
-          <div className="w-24 h-1.5 bg-red-600 mx-auto rounded-full"></div>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto mt-8">
-            ScafX stands as the benchmark for reliability. We don't just supply equipment; 
-            we deliver safety, stability, and engineered precision.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-8">
-          {/* Card 1 */}
-          <div className="group bg-white p-10 shadow-lg hover:shadow-2xl transition-all duration-300 border-t-4 border-transparent hover:border-red-600 relative overflow-hidden">
-            <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition">
-               {/* Background Icon Effect */}
-               <svg className="w-24 h-24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L1 21h22L12 2zm0 3.99L19.53 19H4.47L12 5.99zM13 16h-2v2h2v-2zm0-6h-2v4h2v-4z"/></svg>
-            </div>
-            <div className="w-14 h-14 bg-red-100 text-red-600 flex items-center justify-center rounded-lg mb-6 group-hover:bg-red-600 group-hover:text-white transition-colors">
-              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-            </div>
-            <h3 className="text-2xl font-bold text-[#0c1635] mb-4">Certified Safety</h3>
-            <p className="text-gray-600 leading-relaxed">
-              Global safety standards compliant. Every joint and frame is tested 
-              to withstand extreme industrial loads.
-            </p>
-          </div>
-
-          {/* Card 2 */}
-          <div className="group bg-white p-10 shadow-lg hover:shadow-2xl transition-all duration-300 border-t-4 border-transparent hover:border-red-600 relative overflow-hidden">
-            <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition">
-               <svg className="w-24 h-24" fill="currentColor" viewBox="0 0 24 24"><path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/></svg>
-            </div>
-            <div className="w-14 h-14 bg-blue-100 text-[#0c1635] flex items-center justify-center rounded-lg mb-6 group-hover:bg-[#0c1635] group-hover:text-white transition-colors">
-              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
-            </div>
-            <h3 className="text-2xl font-bold text-[#0c1635] mb-4">Premium Alloys</h3>
-            <p className="text-gray-600 leading-relaxed">
-              Constructed using aerospace-grade aluminium alloys for corrosion resistance 
-              and superior load-bearing capacity.
-            </p>
-          </div>
-
-          {/* Card 3 */}
-          <div className="group bg-white p-10 shadow-lg hover:shadow-2xl transition-all duration-300 border-t-4 border-transparent hover:border-red-600 relative overflow-hidden">
-             <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition">
-               <svg className="w-24 h-24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 22h20L12 2zm0 3l7.5 15h-15L12 5z"/></svg>
-            </div>
-            <div className="w-14 h-14 bg-gray-200 text-gray-800 flex items-center justify-center rounded-lg mb-6 group-hover:bg-gray-800 group-hover:text-white transition-colors">
-              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path></svg>
-            </div>
-            <h3 className="text-2xl font-bold text-[#0c1635] mb-4">Tailored Solutions</h3>
-            <p className="text-gray-600 leading-relaxed">
-              Complex site? Our engineers design custom access setups for 
-              industrial plants and high-rise construction.
-            </p>
-          </div>
+      {/* --- Premium Stats Strip --- */}
+      <section className="relative bg-[#0c1635] py-12 border-b border-gray-800 overflow-hidden">
+        <div className="container mx-auto px-6 relative z-10">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            className="flex flex-col md:flex-row justify-center items-center gap-12 text-center"
+          >
+            {[
+              { value: "15+", label: "Years of Engineering Excellence" },
+              { value: "500+", label: "Industrial Systems Delivered" },
+              { value: "100%", label: "Certified Safety Compliance" },
+            ].map((stat, index) => (
+              <motion.div
+                key={index}
+                variants={fadeInUp}
+                className="group cursor-default"
+              >
+                <h3 className="text-3xl md:text-4xl font-bold text-white transition-colors duration-500 group-hover:text-red-500">
+                  {stat.value}
+                </h3>
+                <div className="h-1 w-10 bg-red-600 mx-auto my-3 rounded-full group-hover:w-16 transition-all duration-500" />
+                <p className="text-gray-300 text-sm md:text-base font-semibold uppercase tracking-[0.15em] whitespace-nowrap">
+                  {stat.label}
+                </p>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </section>
 
-      {/* CTA Section - Modern Industrial Look */}
-      <section className="relative py-24 px-6 bg-[#1a202c]">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10" style={{backgroundImage: "radial-gradient(#ffffff 1px, transparent 1px)", backgroundSize: "20px 20px"}}></div>
-        
-        <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-            Ready to Elevate Your Project?
-          </h2>
-          <p className="text-gray-400 text-lg mb-10 max-w-2xl mx-auto">
-            From warehouses to skyscrapers, we provide the backbone for your construction success. 
-            Get a custom quote within 24 hours.
-          </p>
-          <a
-            href="/contact"
-            className="inline-block bg-red-600 text-white px-12 py-4 rounded-sm text-lg font-bold uppercase tracking-widest hover:bg-red-700 hover:scale-105 transition-transform shadow-xl"
+      {/* --- Why Choose ScafXS (Premium Grid) --- */}
+      <section className="relative py-32 px-6 bg-gray-50">
+        {/* Technical Grid Background */}
+        <div
+          className="absolute inset-0 opacity-[0.03]"
+          style={{
+            backgroundImage:
+              "linear-gradient(#0c1635 1px, transparent 1px), linear-gradient(90deg, #0c1635 1px, transparent 1px)",
+            backgroundSize: "40px 40px",
+          }}
+        ></div>
+
+        <div className="container mx-auto relative z-10">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            className="text-center mb-20 max-w-3xl mx-auto"
           >
-            Start Your Project
-          </a>
+            <span className="text-red-600 font-bold uppercase tracking-[0.2em] text-xs md:text-sm mb-4 block">
+              The ScafXS Advantage
+            </span>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-[#0c1635] leading-tight mb-6">
+              Engineering{" "}
+              <span className="text-gray-400 italic font-serif">Beyond</span>{" "}
+              Standards
+            </h2>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              We don’t just manufacture aluminum systems — we design certified
+              access solutions engineered for extreme loads, complex geometries,
+              and mission-critical industrial environments worldwide.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+            className="grid md:grid-cols-3 gap-8"
+          >
+            {[
+              {
+                icon: ShieldCheck,
+                title: "Safety-First Engineering",
+                desc: "Designed to exceed ISO & EN certifications with self-locking mechanisms that eliminate on-site risk.",
+              },
+              {
+                icon: Layers,
+                title: "Aerospace-Grade Aluminum",
+                desc: "Built using T6-6061 alloy, delivering steel-level strength with unmatched portability and corrosion resistance.",
+              },
+              {
+                icon: Ruler,
+                title: "Precision Modular Systems",
+                desc: "Engineered to millimeter-accurate specifications for refineries, plants, and complex industrial layouts.",
+              },
+            ].map((feature, idx) => (
+              <motion.div
+                key={idx}
+                variants={fadeInUp}
+                className="group relative bg-white p-1 hover:z-20 transition-all duration-300"
+              >
+                <div className="relative h-full bg-white p-8 md:p-10 border border-gray-100 shadow-sm transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 overflow-hidden">
+                  {/* Hover Gradient Background */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#0c1635] to-[#1a2b5e] opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out" />
+
+                  {/* Decorative corner accent */}
+                  <div className="absolute top-0 right-0 w-20 h-20 bg-gray-50 rounded-bl-full -mr-10 -mt-10 group-hover:bg-red-600 transition-colors duration-500" />
+
+                  {/* Icon */}
+                  <div className="relative w-14 h-14 mb-8 flex items-center justify-center rounded-lg bg-gray-50 text-[#0c1635] group-hover:bg-white/10 group-hover:text-white transition-all duration-500">
+                    <feature.icon className="w-7 h-7" strokeWidth={1.5} />
+                  </div>
+
+                  {/* Content */}
+                  <div className="relative z-10">
+                    <h3 className="text-2xl font-bold text-[#0c1635] mb-4 group-hover:text-white transition-colors duration-300">
+                      {feature.title}
+                    </h3>
+                    <p className="text-gray-500 leading-relaxed mb-6 group-hover:text-gray-300 transition-colors duration-300">
+                      {feature.desc}
+                    </p>
+
+                    <div className="flex items-center gap-2 text-red-600 font-bold text-sm uppercase tracking-wider opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 group-hover:text-white transition-all duration-500 delay-100">
+                      <span>Technical Specs</span>
+                      <ArrowRight className="w-4 h-4" />
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
+      </section>
+
+      {/* --- Modern CTA Section --- */}
+      <section className="relative py-28 overflow-hidden">
+        {/* Dotted Background */}
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `
+        radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+        radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px)
+      `,
+            backgroundSize: "40px 40px",
+            backgroundPosition: "0 0, 20px 20px",
+          }}
+        ></div>
+
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0c1635]/100 via-[#0c1635]/70 to-[#0c1635]/90"></div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+          className="relative z-10 container mx-auto px-6 text-center"
+        >
+          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
+            Ready to Elevate Safety?
+          </h2>
+          <p className="text-gray-300 text-lg md:text-xl mb-10 max-w-2xl mx-auto font-light">
+            Partner with ScafXS for certified, future-ready scaffolding systems
+            trusted across industrial, infrastructure, and energy projects
+            worldwide.
+          </p>
+
+          <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
+            <button
+              onClick={handleClick}
+              className="group relative inline-flex w-fit px-6 py-3 bg-red-600 text-white text-sm md:text-base font-bold uppercase tracking-wide overflow-hidden transition-all hover:bg-red-700"
+            >
+              <span className="relative z-10 group-hover:mr-2 transition-all">
+                Request Quote
+              </span>
+              <span className="absolute right-0 top-0 h-full w-0 bg-white/20 group-hover:w-full transition-all duration-300 ease-out"></span>
+            </button>
+          </div>
+        </motion.div>
       </section>
     </div>
   );

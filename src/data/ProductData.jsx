@@ -1,159 +1,352 @@
 const productsData = [
   {
-    id: "SC-101",
-    title: "ProStep Aluminium Ladder",
+    id: "AT-100",
+    title: "Aluminum Scaffolding Towers",
+    category: "Scaffolding",
+    image: "/products/aluminum-tower.png",
+    description:
+      "Modular aluminum scaffolding towers engineered for industrial maintenance, construction, and MEP access with multiple working heights and widths.",
+    specs: {
+      material: "Aluminum 6061-T6",
+      load: "250 kg per platform",
+      compliance: "EN 1004 / OSHA",
+      finish: "Anodized / Mill Finish",
+    },
+    dimensions: {
+      platformWidth: "0.75m / 1.35m",
+      workingHeights: "4m / 6m / 8m / 10m / 12m",
+      baseSize: "1.8m x 1.35m",
+    },
+    variants: {
+      models: "Single Width / Double Width",
+      heightModules: "2m modular frames",
+    },
+    features: [
+      "Tool-free modular assembly",
+      "Lockable heavy-duty castor wheels",
+      "Guard rails & toe boards included",
+      "Indoor & outdoor compatible",
+    ],
+  },
+
+  {
+    id: "NT-210",
+    title: "Narrow Frame Scaffolding Towers",
+    category: "Scaffolding",
+    image: "/products/narrow-frame.png",
+    description:
+      "Compact narrow-frame aluminum towers designed for corridors, elevators, and confined industrial spaces.",
+    specs: {
+      material: "Lightweight Aluminum",
+      load: "200 kg",
+      compliance: "EN 1004",
+    },
+    dimensions: {
+      platformWidth: "0.60m",
+      workingHeights: "4m / 6m / 8m",
+      baseSize: "1.5m x 0.75m",
+    },
+    variants: {
+      models: "Indoor / Outdoor",
+    },
+    features: [
+      "Ideal for narrow access areas",
+      "Quick locking frame system",
+      "Non-marking castors",
+    ],
+  },
+
+  {
+    id: "FT-330",
+    title: "Hinged & Foldable Indoor Towers",
+    category: "Scaffolding",
+    image: "/products/foldable-tower.png",
+    description:
+      "Foldable aluminum access towers for indoor maintenance with ultra-fast setup and compact storage.",
+    specs: {
+      material: "Aluminum Alloy",
+      load: "150 kg",
+      usage: "Indoor Only",
+    },
+    dimensions: {
+      foldedSize: "2.0m x 0.75m",
+      workingHeights: "3m / 4.5m / 6m",
+    },
+    variants: {
+      models: "Hinged / One-touch fold",
+    },
+    features: [
+      "One-person setup",
+      "Fits through standard doors",
+      "Lightweight & portable",
+    ],
+  },
+
+  {
+    id: "PA-410",
+    title: "Podium & Cantilever Access Systems",
+    category: "Access",
+    image: "/products/podium.png",
+    description:
+      "Podium steps and cantilever platforms offering safe elevated access for maintenance and installation work.",
+    specs: {
+      material: "Aluminum",
+      load: "150 kg",
+      compliance: "EN 131",
+    },
+    dimensions: {
+      platformHeight: "1.0m / 1.5m / 2.0m",
+      platformSize: "600mm x 600mm",
+    },
+    variants: {
+      types: "Podium / Cantilever",
+    },
+    features: [
+      "Handrails & guardrails included",
+      "Anti-slip platform",
+      "Compact footprint",
+    ],
+  },
+
+  {
+    id: "MB-520",
+    title: "Modular Bridge Scaffolding",
+    category: "Access",
+    image: "/products/bridge.png",
+    description:
+      "Engineered aluminum bridge scaffolding systems designed to cross machinery, pipelines, and obstacles safely.",
+    specs: {
+      material: "Structural Aluminum",
+      load: "Up to 500 kg",
+      compliance: "Project Specific",
+    },
+    dimensions: {
+      spanLengths: "2m / 3m / 4m / Custom",
+      walkwayWidth: "750mm",
+    },
+    variants: {
+      configurations: "Single span / Multi-span",
+    },
+    features: [
+      "Custom engineered designs",
+      "High load capacity",
+      "Quick installation",
+    ],
+  },
+
+  {
+    id: "ST-610",
+    title: "Custom Staircase Towers",
+    category: "Access",
+    image: "/products/staircase.png",
+    description:
+      "Custom-built aluminum staircase towers for safe and ergonomic access across industrial facilities.",
+    specs: {
+      material: "Custom Aluminum Alloy",
+      load: "300 kg",
+      compliance: "Project Based",
+    },
+    dimensions: {
+      stairWidth: "800mm / Custom",
+      riseHeight: "As per site requirement",
+    },
+    variants: {
+      configurations: "Temporary / Semi-Permanent",
+    },
+    features: [
+      "Non-slip stair treads",
+      "Handrails both sides",
+      "Designed as per site layout",
+    ],
+  },
+
+  {
+    id: "WL-710",
+    title: "Aluminum Wall Ladders",
     category: "Ladders",
-    image: "https://images.pexels.com/photos/30446403/pexels-photo-30446403.jpeg",
+    image: "/products/wall-ladder.png",
     description:
-      "Premium industrial-grade aluminium ladder engineered for lightweight durability and safe elevation tasks.",
+      "Fixed aluminum wall ladders available in multiple heights for industrial plants and facilities.",
     specs: {
-      material: "Alloy 6061",
+      material: "Aluminum",
       load: "150 kg",
-      height: "2m – 6m",
-      weight: "8.5 kg",
-      finish: "Anodized Scratch-Resistant",
-      cert: "ISO 9001",
-      safety: "Anti-slip steps, stabilizer bar",
+      compliance: "EN 131",
     },
     dimensions: {
-      folded: "2m x 45cm",
-      extended: "6m max height",
-      stepWidth: "75mm Anti-slip",
+      heights: "2m / 3m / 4m / 5m / 6m",
+      rungSpacing: "300mm",
+    },
+    variants: {
+      models: "With cage / Without cage",
     },
     features: [
-      "High-tensile aluminium construction",
-      "Slip-proof rubber feet",
-      "Industrial stabilizer bar",
-      "Lightweight portability",
+      "Corrosion resistant",
+      "Optional safety cage",
+      "Wall mounting brackets included",
     ],
   },
 
   {
-    id: "SC-204",
-    title: "Mobile Scaffolding Tower",
-    category: "Scaffolding",
-    image:
-      "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQJmJPGXZmh4tifObhC37uUOb3frDK27kyEji4thjiGcACxz_sMJTlHcWV41EzHNlO4EXphNE7e",
-    description:
-      "High-stability modular scaffolding tower for industrial construction tasks with maximum safety.",
-    specs: {
-      material: "Galvanized Steel",
-      load: "450 kg",
-      height: "Up to 12m",
-      cert: "OSHA Approved",
-      finish: "Rust-Proof Zinc Coat",
-    },
-    dimensions: {
-      base: "2.5m x 1.3m",
-      platform: "Wide Anti-slip",
-      sections: "Modular 2m Sections",
-    },
-    features: [
-      "Heavy-duty steel framework",
-      "Lockable wheels for mobility",
-      "Wide work platform",
-      "Weather-resistant structure",
-    ],
-  },
-
-  {
-    id: "SF-900",
-    title: "Safety Harness Kit",
-    category: "Safety",
-    image:
-      "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQuxQaquuQijx9Ryhoy-SLqcoSl5yLaPrPwch2uNUSZ0sBv6upfqz2Dr05W507_FAdkS3dkNXe2",
-    description:
-      "Full-body fall protection harness designed for high-altitude safety compliance and industrial work.",
-    specs: {
-      material: "Polyester Web",
-      load: "140 kg",
-      cert: "EN 361",
-      hooks: "Steel D-Ring, Double Lanyard",
-    },
-    dimensions: {
-      beltLength: "Adjustable",
-      shoulderStrap: "Reinforced",
-    },
-    features: [
-      "Shock-absorbing energy lanyard",
-      "Adjustable chest/shoulder straps",
-      "High-strength metal anchors",
-    ],
-  },
-
-  {
-    id: "SC-305",
-    title: "Cuplock System",
-    category: "Scaffolding",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTj8XbPBSF_-GCXVOe5j1GHF8KsG5xVr8dBeA&s",
-    description:
-      "Universal cuplock scaffolding system for heavy-duty modular support structures.",
-    specs: {
-      material: "High-Tensile Steel",
-      load: "Heavy Duty",
-      height: "Modular Additional Sections",
-      finish: "Painted / Galvanized",
-    },
-    dimensions: {
-      standards: "48.3mm x 3.2mm",
-      ledgers: "48.3mm x 3.2mm",
-    },
-    features: [
-      "Fast locking mechanism",
-      "Universal system compatibility",
-      "Corrosion-resistant build",
-    ],
-  },
-
-  {
-    id: "AC-112",
-    title: "Industrial Platform",
+    id: "SS-820",
+    title: "Self-Supporting Stair Systems",
     category: "Access",
-    image:
-      "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=600&q=80",
+    image: "/products/self-stair.png",
     description:
-      "Fiberglass industrial access platform with adjustable height and enhanced operator safety.",
+      "Freestanding aluminum stair systems suitable for both temporary and permanent industrial access.",
     specs: {
-      material: "Fiberglass",
-      load: "150 kg",
-      height: "Adjustable",
-      finish: "Non-Conductive",
+      material: "Structural Aluminum",
+      load: "300 kg",
+      compliance: "EN / OSHA",
     },
     dimensions: {
-      platformSize: "Wide Grip 75cm",
-      heightRange: "1.5m – 3m",
+      stairAngle: "38° – 45°",
+      platformHeight: "1.5m / 2m / 3m",
+    },
+    variants: {
+      models: "Modular / Fixed",
     },
     features: [
-      "Electric-safe fiberglass body",
-      "Slip-resistant platform",
-      "Foldable structure",
+      "No wall support required",
+      "Heavy-duty base structure",
+      "Easy relocation",
     ],
   },
-
   {
-    id: "CS-001",
-    title: "Custom Access Bridge",
-    category: "Access",
-    image:
-      "https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?auto=format&fit=crop&w=600&q=80",
-    description:
-      "Custom engineered access bridges for industrial plant movement, heavy equipment, and elevation tasks.",
-    specs: {
-      material: "Custom Alloy",
-      load: "Variable (Project-based)",
-      cert: "Depends on Project",
-    },
-    dimensions: {
-      length: "As per project",
-      width: "Custom",
-    },
-    features: [
-      "Built for client requirements",
-      "Heavy load capacity",
-      "Enhanced structural stability",
-    ],
+  id: "CL-730",
+  title: "Caged Safety Ladders",
+  category: "Ladders",
+  image: "/products/caged-ladder.png",
+  description:
+    "Vertical aluminum safety ladders with integrated fall-protection cage, designed for permanent access to rooftops, tanks, silos, and industrial structures.",
+  specs: {
+    material: "Aluminum 6061-T6",
+    load: "150 kg",
+    compliance: "EN ISO 14122-4 / OSHA",
+    finish: "Anodized / Powder Coated",
   },
+  dimensions: {
+    ladderHeight: "3m / 4m / 5m / 6m / 8m / Custom",
+    rungSpacing: "280 mm",
+    cageDiameter: "700 mm",
+  },
+  variants: {
+    models: "Rear exit / Side exit / Platform exit",
+  },
+  features: [
+    "Integrated fall-protection safety cage",
+    "Anti-slip rungs",
+    "Wall mounting brackets included",
+    "Suitable for permanent outdoor installation",
+  ],
+},
+{
+  id: "ML-750",
+  title: "Mobile Platform Ladders",
+  category: "Ladders",
+  image: "/products/platform-ladder.png",
+  description:
+    "Heavy-duty mobile platform ladders offering stable elevated access with guardrails and lockable wheels.",
+  specs: {
+    material: "Aluminum",
+    load: "200 kg",
+    compliance: "EN 131-2",
+  },
+  dimensions: {
+    platformHeight: "1.0m / 1.5m / 2.0m / 2.5m",
+    platformSize: "600mm x 800mm",
+  },
+  variants: {
+    models: "Fixed handrail / Folding handrail",
+  },
+  features: [
+    "Anti-slip wide platform",
+    "360° guardrails",
+    "Lockable industrial castors",
+    "Easy mobility and repositioning",
+  ],
+},
+
+{
+  id: "SF-810",
+  title: "Full Body Safety Harness",
+  category: "Safety",
+  image: "/products/safety-harness.png",
+  description:
+    "Industrial full body safety harness designed for fall arrest, positioning, and rescue operations at height.",
+  specs: {
+    material: "Polyester Webbing",
+    load: "140 kg",
+    compliance: "EN 361 / EN 358",
+  },
+  dimensions: {
+    sizeRange: "M / L / XL",
+    adjustablePoints: "Chest, Shoulder, Leg straps",
+  },
+  variants: {
+    models: "Single lanyard / Double lanyard",
+  },
+  features: [
+    "Shock absorbing lanyard",
+    "High-strength steel D-rings",
+    "Quick-adjust buckles",
+    "Ergonomic padded support",
+  ],
+},
+
+{
+  id: "EP-830",
+  title: "Temporary Edge Protection System",
+  category: "Safety",
+  image: "/products/edge-protection.webp",
+  description:
+    "Modular temporary edge protection system for slab edges, rooftops, and elevated platforms during construction.",
+  specs: {
+    material: "Galvanized Steel / Aluminum",
+    load: "As per EN 13374",
+    compliance: "EN 13374 Class A/B/C",
+  },
+  dimensions: {
+    postHeight: "1.1m",
+    railLength: "1.3m / 2.6m",
+  },
+  variants: {
+    types: "Clamp fit / Base plate",
+  },
+  features: [
+    "Quick installation without drilling",
+    "Modular reusable system",
+    "High visibility safety finish",
+  ],
+},
+
+{
+  id: "GR-850",
+  title: "Guardrail & Toe Board Set",
+  category: "Safety",
+  image: "/products/guardrail.jpg",
+  description:
+    "Temporary and semi-permanent guardrail systems with toe boards for fall prevention at elevated work areas.",
+  specs: {
+    material: "Galvanized Steel / Aluminum",
+    load: "Heavy Duty",
+    compliance: "EN 13374 / OSHA",
+  },
+  dimensions: {
+    guardrailHeight: "1.1m",
+    toeBoardHeight: "150 mm",
+  },
+  variants: {
+    configurations: "Single rail / Double rail",
+  },
+  features: [
+    "Prevents tools and materials falling",
+    "Fast clamp-on installation",
+    "Compatible with edge protection posts",
+  ],
+},
+
+
+
 ];
 
 export default productsData;
