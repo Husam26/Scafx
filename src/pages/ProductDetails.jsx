@@ -191,6 +191,20 @@ export default function ProductDetails() {
                     </table>
                   </motion.div>
                 </AnimatePresence>
+                {/* ENGINEERING NOTE */}
+                <motion.div
+                  variants={fadeIn}
+                  className="mt-6 p-4 bg-slate-50 border-l-4 border-red-600 rounded-md"
+                >
+                  <p className="text-xs font-mono text-slate-600 leading-relaxed">
+                    <span className="font-bold text-[#0c1635] uppercase tracking-widest">
+                      Engineering Note:
+                    </span>{" "}
+                    For precise dimensions, load ratings, and available
+                    configurations, please contact our engineering team.
+                    Specifications may vary based on project requirements.
+                  </p>
+                </motion.div>
               </div>
 
               {/* KEY FEATURES */}
